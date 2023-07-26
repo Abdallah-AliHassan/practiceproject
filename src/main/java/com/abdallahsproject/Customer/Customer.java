@@ -9,11 +9,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+
 import java.util.Objects;
 
 @Entity
 @Table(
-        name="customer",
+        name = "customer",
         uniqueConstraints = {
                 @UniqueConstraint(
                         name = "customer_email_unique",
@@ -35,7 +36,7 @@ public class Customer {
     )
     private Long id;
     @Column(
-          nullable = false
+            nullable = false
     )
     private String name;
     @Column(
@@ -117,4 +118,5 @@ public class Customer {
                 ", age=" + age +
                 '}';
     }
+
 }

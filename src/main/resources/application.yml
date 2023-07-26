@@ -1,7 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://projectdb.cpn6qeamn6fy.eu-central-1.rds.amazonaws.com:5432/Customer
-    username: root
+    url: jdbc:postgresql://localhost:5432/postgres
+#    url: jdbc:postgresql://projectdb.cpn6qeamn6fy.eu-central-1.rds.amazonaws.com:5432/Customer
+    username: amigoscode
     password: password
   jpa:
     hibernate:
