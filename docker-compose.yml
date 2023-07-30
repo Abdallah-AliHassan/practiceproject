@@ -13,6 +13,20 @@ services:
     networks:
       - postgres
     restart: unless-stopped
+  practice-project:
+    container_name: practice-project
+    image: abdallahali22/practice-project
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+    ports:
+      - "8088:8080"
+    networks:
+      - postgres
+    depends_on:
+      - db
+    restart: unless-stopped
+  #    command:
+  #      - --spring.datasource.url=jdbc:postgresql://postgres:5432/postgres
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4
