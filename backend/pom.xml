@@ -14,11 +14,6 @@
     <artifactId>practice-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <organization>
-        <name>amigoscode</name>
-        <url>https://amigoscode.com</url>
-    </organization>
-
     <name>practice-project</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -26,6 +21,8 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <docker.username>abdallahali22</docker.username>
+        <docker.image.name>practice-project</docker.image.name>
+        <docker.image.tag/>
     </properties>
 
     <dependencies>
@@ -164,7 +161,7 @@
                         </platforms>
                     </from>
                     <to>
-                        <image>docker.io/${docker.username}/${project.artifactId}:${project.version}</image>
+                        <image>docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}</image>
                         <tags>
                             <tag>latest</tag>
                         </tags>
