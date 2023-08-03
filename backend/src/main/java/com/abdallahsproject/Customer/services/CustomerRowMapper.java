@@ -1,7 +1,9 @@
-package com.abdallahsproject.Customer;
+package com.abdallahsproject.Customer.services;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import com.abdallahsproject.Customer.models.Customer;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 

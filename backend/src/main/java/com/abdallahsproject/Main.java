@@ -1,7 +1,7 @@
 package com.abdallahsproject;
 
-import com.abdallahsproject.Customer.Customer;
-import com.abdallahsproject.Customer.CustomerRepository;
+import com.abdallahsproject.Customer.models.Customer;
+import com.abdallahsproject.Customer.repositories.CustomerRepository;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 

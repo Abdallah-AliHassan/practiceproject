@@ -1,5 +1,9 @@
-package com.abdallahsproject.Customer;
+package com.abdallahsproject.Customer.controllers;
 
+import com.abdallahsproject.Customer.models.Customer;
+import com.abdallahsproject.Customer.models.CustomerRegistrationRequest;
+import com.abdallahsproject.Customer.services.CustomerService;
+import com.abdallahsproject.Customer.models.CustomerUpdateRequest;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

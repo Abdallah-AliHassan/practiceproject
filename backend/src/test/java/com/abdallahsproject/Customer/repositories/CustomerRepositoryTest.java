@@ -1,6 +1,8 @@
-package com.abdallahsproject.Customer;
+package com.abdallahsproject.Customer.repositories;
 
 import com.abdallahsproject.AbstractTestcontainers;
+import com.abdallahsproject.Customer.models.Customer;
+import com.abdallahsproject.Customer.repositories.CustomerRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

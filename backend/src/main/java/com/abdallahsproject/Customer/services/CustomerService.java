@@ -1,5 +1,8 @@
-package com.abdallahsproject.Customer;
+package com.abdallahsproject.Customer.services;
 
+import com.abdallahsproject.Customer.models.Customer;
+import com.abdallahsproject.Customer.models.CustomerRegistrationRequest;
+import com.abdallahsproject.Customer.models.CustomerUpdateRequest;
 import com.abdallahsproject.exception.DuplicateResourceException;
 import com.abdallahsproject.exception.RequestValidationException;
 import com.abdallahsproject.exception.ResourceNotFoundException;

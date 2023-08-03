@@ -1,8 +1,8 @@
 package com.abdallahsproject.integrationTests;
 
-import com.abdallahsproject.Customer.Customer;
-import com.abdallahsproject.Customer.CustomerRegistrationRequest;
-import com.abdallahsproject.Customer.CustomerUpdateRequest;
+import com.abdallahsproject.Customer.models.Customer;
+import com.abdallahsproject.Customer.models.CustomerRegistrationRequest;
+import com.abdallahsproject.Customer.models.CustomerUpdateRequest;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 import org.junit.jupiter.api.Test;

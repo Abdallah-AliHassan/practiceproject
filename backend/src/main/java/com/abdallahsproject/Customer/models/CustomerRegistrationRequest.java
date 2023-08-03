@@ -1,4 +1,4 @@
-package com.abdallahsproject.Customer;
+package com.abdallahsproject.Customer.models;
 
 public record CustomerRegistrationRequest(
         String name,

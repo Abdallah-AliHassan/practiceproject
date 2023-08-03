@@ -1,5 +1,6 @@
-package com.abdallahsproject.Customer;
+package com.abdallahsproject.Customer.services;
 
+import com.abdallahsproject.Customer.models.Customer;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

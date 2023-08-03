@@ -1,5 +1,8 @@
-package com.abdallahsproject.Customer;
+package com.abdallahsproject.Customer.services;
 
+import com.abdallahsproject.Customer.models.Customer;
+import com.abdallahsproject.Customer.repositories.CustomerRepository;
+import com.abdallahsproject.Customer.services.CustomerJPADataAccessService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

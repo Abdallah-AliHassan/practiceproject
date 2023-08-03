@@ -1,5 +1,7 @@
-package com.abdallahsproject.Customer;
+package com.abdallahsproject.Customer.services;
 
+import com.abdallahsproject.Customer.models.Customer;
+import com.abdallahsproject.Customer.services.CustomerRowMapper;
 import org.junit.jupiter.api.Test;
 
 import java.sql.ResultSet;

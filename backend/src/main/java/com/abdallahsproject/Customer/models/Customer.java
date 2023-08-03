@@ -1,4 +1,4 @@
-package com.abdallahsproject.Customer;
+package com.abdallahsproject.Customer.models;
 
 
 import jakarta.persistence.Column;

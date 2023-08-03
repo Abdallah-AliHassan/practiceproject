@@ -1,9 +1,10 @@
-package com.abdallahsproject.Customer;
+package com.abdallahsproject.Customer.services;
 
 import java.util.List;
 import java.util.Optional;
+
+import com.abdallahsproject.Customer.models.Customer;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 @Repository("jdbc")
