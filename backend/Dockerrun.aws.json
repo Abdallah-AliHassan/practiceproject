@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "practice-project",
-      "image": "abdallahali22/practice-project:02.08.2023.20.10.23",
+      "image": "abdallahali22/practice-project:02.08.2023.21.11.37",
       "essential": true,
       "memory": 512,
       "portMappings": [
