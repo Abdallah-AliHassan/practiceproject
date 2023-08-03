@@ -1,7 +1,14 @@
 package com.abdallahsproject.Customer;
 
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 import java.util.Objects;
 
@@ -41,36 +48,20 @@ public class Customer {
     )
     private Integer age;
 
-    @Column(
-            nullable = false
-    )
-    @Enumerated(EnumType.STRING)
-    private Gender gender;
-
     public Customer() {
     }
 
-    public Customer(Long id, String name, String email, Integer age, Gender gender) {
+    public Customer(Long id, String name, String email, Integer age) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.age = age;
-        this.gender = gender;
     }
 
-    public Customer(String name, String email, Integer age, Gender gender) {
+    public Customer(String name, String email, Integer age) {
         this.name = name;
         this.email = email;
         this.age = age;
-        this.gender = gender;
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
     }
 
     public Long getId() {
@@ -115,7 +106,7 @@ public class Customer {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, email, age, gender);
+        return Objects.hash(id, name, email, age);
     }
 
     @Override
@@ -125,7 +116,7 @@ public class Customer {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", age=" + age +
-                ", gender=" + gender +
                 '}';
     }
+
 }
