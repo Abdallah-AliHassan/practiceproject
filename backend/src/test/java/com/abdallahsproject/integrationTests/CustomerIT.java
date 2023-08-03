@@ -3,6 +3,7 @@ package com.abdallahsproject.integrationTests;
 import com.abdallahsproject.Customer.Customer;
 import com.abdallahsproject.Customer.CustomerRegistrationRequest;
 import com.abdallahsproject.Customer.CustomerUpdateRequest;
+import com.abdallahsproject.Customer.Gender;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 import org.junit.jupiter.api.Test;
@@ -23,7 +24,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 public class CustomerIT {
 
     @Autowired
-    private WebTestClient webTestClient; //acts like postman
+    private WebTestClient webTestClient; //acts like a client
 
     private static final Random random = new Random();
     private static final String MAIN_PATH = "/api/v1/customers";
@@ -37,8 +38,10 @@ public class CustomerIT {
         String email = fakerName.lastName() + "@exampleTestawy.com";
         int age = random.nextInt(1, 100);
 
+        Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
+
         CustomerRegistrationRequest customerRegistrationRequest = new CustomerRegistrationRequest(
-                name, email, age
+                name, email, age, gender
         );
 
         webTestClient.post()
@@ -62,8 +65,7 @@ public class CustomerIT {
                 .getResponseBody();
 
         Customer expectedCustomer = new Customer(
-                name, email, age
-        );
+                name, email, age, gender);
 
         assertThat(allCustomers)
                 .usingRecursiveFieldByFieldElementComparatorIgnoringFields("id")
@@ -97,8 +99,10 @@ public class CustomerIT {
         int age = random.nextInt(1, 100);
         String email = fakerName.lastName() + age + "@exampleTestawy.com";
 
+        Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
+
         CustomerRegistrationRequest customerRegistrationRequest = new CustomerRegistrationRequest(
-                name, email, age
+                name, email, age, gender
         );
 
         webTestClient.post()
@@ -152,8 +156,10 @@ public class CustomerIT {
         String email = fakerName.lastName() + "@exampleTestawy.com";
         int age = random.nextInt(1, 100);
 
+        Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
+
         CustomerRegistrationRequest customerRegistrationRequest = new CustomerRegistrationRequest(
-                name, email, age
+                name, email, age, gender
         );
 
         webTestClient.post()
@@ -163,7 +169,7 @@ public class CustomerIT {
                 .body(Mono.just(customerRegistrationRequest), CustomerRegistrationRequest.class)
                 .exchange()
                 .expectStatus()
-                .isOk();
+                  .isOk();
 
         List<Customer> allCustomers = webTestClient.get()
                 .uri(MAIN_PATH)
@@ -207,8 +213,7 @@ public class CustomerIT {
                 .getResponseBody();
 
         Customer expected = new Customer(
-                id, newName, email, age
-        );
+                id, newName, email, age, gender);
 
         assertThat(updatedCustomer).isEqualTo(expected);
     }
