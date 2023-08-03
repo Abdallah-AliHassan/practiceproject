@@ -24,7 +24,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 public class CustomerIT {
 
     @Autowired
-    private WebTestClient webTestClient; //acts like postman
+    private WebTestClient webTestClient; //acts like a client
 
     private static final Random random = new Random();
     private static final String MAIN_PATH = "/api/v1/customers";
