@@ -2,9 +2,10 @@ package com.abdallahsproject;
 
 import com.abdallahsproject.Customer.Customer;
 import com.abdallahsproject.Customer.CustomerRepository;
+import com.abdallahsproject.Customer.Gender;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
-import java.util.List;
+
 import java.util.Random;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,12 +27,14 @@ public class Main {
 			Name name = faker.name();
 			String firstName = name.firstName();
 			String lastName = name.lastName();
+			int age = random.nextInt(16, 99);
+			Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
 			Customer customer = new Customer(
 					firstName + " " + lastName,
 					firstName.toLowerCase() + "." + lastName.toLowerCase()
 							+ "@exampleawy.com",
-					random.nextInt(16, 99)
-		);
+					age,
+					gender);
 			customerRepository.save(customer);
 		};
 	}
