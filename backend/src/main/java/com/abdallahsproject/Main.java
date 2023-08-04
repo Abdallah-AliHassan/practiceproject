@@ -1,7 +1,10 @@
 package com.abdallahsproject;
 
+import com.abdallahsproject.Customer.models.CarModel;
 import com.abdallahsproject.Customer.models.Customer;
+import com.abdallahsproject.Customer.models.ElectricCar;
 import com.abdallahsproject.Customer.repositories.CustomerRepository;
+import com.abdallahsproject.Customer.repositories.ElectricCarRepository;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 
@@ -19,20 +22,24 @@ public class Main {
 	}
 
 	@Bean
-	CommandLineRunner runner(CustomerRepository customerRepository){
+	CommandLineRunner runner(CustomerRepository customerRepository, ElectricCarRepository electricCarRepository){
 		return args -> {
 			var faker = new Faker();
 			Random random = new Random();
 			Name name = faker.name();
 			String firstName = name.firstName();
 			String lastName = name.lastName();
+			String email = firstName.toLowerCase() + "." + lastName.toLowerCase()
+					+ "@example.com";
 			Customer customer = new Customer(
 					firstName + " " + lastName,
-					firstName.toLowerCase() + "." + lastName.toLowerCase()
-							+ "@example.com",
+					email,
 					random.nextInt(16, 99)
 			);
 			customerRepository.save(customer);
+
+			ElectricCar car = new ElectricCar(email, CarModel.AUDI);
+			electricCarRepository.save(car);
 		};
 	}
 }
