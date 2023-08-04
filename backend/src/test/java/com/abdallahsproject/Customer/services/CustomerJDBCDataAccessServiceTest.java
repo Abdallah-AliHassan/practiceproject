@@ -2,8 +2,7 @@ package com.abdallahsproject.Customer.services;
 
 import com.abdallahsproject.AbstractTestcontainers;
 import com.abdallahsproject.Customer.models.Customer;
-import com.abdallahsproject.Customer.services.CustomerJDBCDataAccessService;
-import com.abdallahsproject.Customer.services.CustomerRowMapper;
+import com.abdallahsproject.Customer.mappers.CustomerRowMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

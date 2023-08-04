@@ -1,5 +1,8 @@
 package com.abdallahsproject.Customer.controllers;
 
+import com.abdallahsproject.Customer.models.CarRegistrationRequest;
+import com.abdallahsproject.Customer.models.Customer;
+import com.abdallahsproject.Customer.models.CustomerCarDTO;
 import com.abdallahsproject.Customer.models.ElectricCar;
 import com.abdallahsproject.Customer.services.ElectricCarService;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +19,6 @@ public class ElectricCarController {
     public ElectricCarController(ElectricCarService electricCarService) {
         this.electricCarService = electricCarService;
     }
-
 
     @GetMapping("{email}")
     public List<ElectricCar> getCarByEmail(
@@ -35,8 +37,22 @@ public class ElectricCarController {
             @PathVariable("id") Long id) {
         return electricCarService.selectCarById(id);
     }
+
     @GetMapping
     public List<ElectricCar> getCarByEmail() {
         return electricCarService.getAllCars();
     }
+
+    @PostMapping
+    public void registerElectricCar(@RequestBody CarRegistrationRequest request){
+        electricCarService.addElectricCar(request);
+    }
+
+    @GetMapping("info/{id}")
+    public CustomerCarDTO getCustomerInfo(
+            @PathVariable("id") Long customerId) {
+        return electricCarService.getCustomerInfo(customerId);
+    }
 }
+
+

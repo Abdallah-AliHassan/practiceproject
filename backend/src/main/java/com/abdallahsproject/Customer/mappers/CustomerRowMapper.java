@@ -1,4 +1,4 @@
-package com.abdallahsproject.Customer.services;
+package com.abdallahsproject.Customer.mappers;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

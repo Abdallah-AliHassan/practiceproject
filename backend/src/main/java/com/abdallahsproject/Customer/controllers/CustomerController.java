@@ -56,4 +56,5 @@ public class CustomerController {
                                @RequestBody CustomerUpdateRequest request) {
         customerService.updateCustomer(customerId, request);
     }
+
 }
