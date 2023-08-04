@@ -5,7 +5,7 @@ import com.abdallahsproject.Customer.services.ElectricCarService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("api/v1/car")
@@ -19,19 +19,19 @@ public class ElectricCarController {
 
 
     @GetMapping("{email}")
-    public List<ElectricCar> getCar(
+    public List<ElectricCar> getCarByEmail(
             @PathVariable("email") String email) {
         return electricCarService.selectCarByEmail(email);
     }
 
     @DeleteMapping("{email}")
-    public void deleteCustomer(
+    public void deleteCarByEmail(
             @PathVariable("email") String email) {
         electricCarService.deleteCarByEmail(email);
     }
 
-    @GetMapping("{id}")
-    public Optional<ElectricCar> getCar(
+    @GetMapping("find/{id}")
+    public ElectricCar getCarById(
             @PathVariable("id") Long id) {
         return electricCarService.selectCarById(id);
     }

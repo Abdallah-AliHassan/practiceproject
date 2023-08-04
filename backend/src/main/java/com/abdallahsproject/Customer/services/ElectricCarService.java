@@ -3,10 +3,11 @@ package com.abdallahsproject.Customer.services;
 
 import com.abdallahsproject.Customer.models.ElectricCar;
 import com.abdallahsproject.Customer.repositories.ElectricCarRepository;
+import com.abdallahsproject.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class ElectricCarService {
@@ -25,8 +26,11 @@ public class ElectricCarService {
         electricCarRepository.deleteElectricCarByEmail(email);
     }
 
-    public Optional<ElectricCar> selectCarById(Long id){
-        return electricCarRepository.findElectricCarById(id);
+    public ElectricCar selectCarById(Long id){
+        return electricCarRepository.findElectricCarById(id)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "customer with id [%s] not found".formatted(id)
+                ));
     }
 
 }
