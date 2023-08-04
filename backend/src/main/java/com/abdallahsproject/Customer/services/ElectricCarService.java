@@ -33,4 +33,7 @@ public class ElectricCarService {
                 ));
     }
 
+    public List<ElectricCar> getAllCars() {
+        return electricCarRepository.findAll();
+    }
 }

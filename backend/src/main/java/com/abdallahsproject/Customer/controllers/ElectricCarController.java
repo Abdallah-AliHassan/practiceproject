@@ -35,4 +35,8 @@ public class ElectricCarController {
             @PathVariable("id") Long id) {
         return electricCarService.selectCarById(id);
     }
+    @GetMapping
+    public List<ElectricCar> getCarByEmail() {
+        return electricCarService.getAllCars();
+    }
 }
