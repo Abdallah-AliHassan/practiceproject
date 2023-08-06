@@ -1,6 +1,6 @@
 package com.abdallahsproject.Customer.models;
 
-public record CarRegistrationRequest(
+public record ElectricCarRegistrationRequest(
         String email,
         CarModel model
 ) {

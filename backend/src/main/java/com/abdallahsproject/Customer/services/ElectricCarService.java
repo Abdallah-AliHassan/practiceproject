@@ -1,7 +1,7 @@
 package com.abdallahsproject.Customer.services;
 
 
-import com.abdallahsproject.Customer.models.CarRegistrationRequest;
+import com.abdallahsproject.Customer.models.ElectricCarRegistrationRequest;
 import com.abdallahsproject.Customer.models.Customer;
 import com.abdallahsproject.Customer.models.CustomerCarDTO;
 import com.abdallahsproject.Customer.models.ElectricCar;
@@ -10,7 +10,6 @@ import com.abdallahsproject.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -59,7 +58,7 @@ public class ElectricCarService {
                 );
 }
 
-    public void addElectricCar(CarRegistrationRequest carRegistrationRequest) {
+    public void addElectricCar(ElectricCarRegistrationRequest carRegistrationRequest) {
         ElectricCar electricCar = new ElectricCar(
                 carRegistrationRequest.email(),
                 carRegistrationRequest.model()

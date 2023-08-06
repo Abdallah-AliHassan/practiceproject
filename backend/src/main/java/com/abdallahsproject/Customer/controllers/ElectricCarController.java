@@ -1,7 +1,6 @@
 package com.abdallahsproject.Customer.controllers;
 
-import com.abdallahsproject.Customer.models.CarRegistrationRequest;
-import com.abdallahsproject.Customer.models.Customer;
+import com.abdallahsproject.Customer.models.ElectricCarRegistrationRequest;
 import com.abdallahsproject.Customer.models.CustomerCarDTO;
 import com.abdallahsproject.Customer.models.ElectricCar;
 import com.abdallahsproject.Customer.services.ElectricCarService;
@@ -39,12 +38,12 @@ public class ElectricCarController {
     }
 
     @GetMapping
-    public List<ElectricCar> getCarByEmail() {
+    public List<ElectricCar> getAllElectricCars() {
         return electricCarService.getAllCars();
     }
 
     @PostMapping
-    public void registerElectricCar(@RequestBody CarRegistrationRequest request){
+    public void registerElectricCar(@RequestBody ElectricCarRegistrationRequest request){
         electricCarService.addElectricCar(request);
     }
 

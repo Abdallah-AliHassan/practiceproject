@@ -1,14 +1,18 @@
 package com.abdallahsproject;
 
-import com.abdallahsproject.Customer.models.CarModel;
-import com.abdallahsproject.Customer.models.Customer;
-import com.abdallahsproject.Customer.models.ElectricCar;
+import com.abdallahsproject.Customer.models.*;
+import com.abdallahsproject.Customer.repositories.CarSpecsRepository;
 import com.abdallahsproject.Customer.repositories.CustomerRepository;
 import com.abdallahsproject.Customer.repositories.ElectricCarRepository;
+import com.abdallahsproject.Customer.repositories.FactoryRepository;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 
+import java.util.List;
 import java.util.Random;
+import java.util.Set;
+
+import javafx.concurrent.Service;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,7 +26,10 @@ public class Main {
 	}
 
 	@Bean
-	CommandLineRunner runner(CustomerRepository customerRepository, ElectricCarRepository electricCarRepository){
+	CommandLineRunner runner(CustomerRepository customerRepository,
+							 ElectricCarRepository electricCarRepository,
+							 CarSpecsRepository carSpecsRepository,
+							 FactoryRepository factoryRepository){
 		return args -> {
 			var faker = new Faker();
 			Random random = new Random();
@@ -40,7 +47,7 @@ public class Main {
 
 			ElectricCar car = new ElectricCar(email, CarModel.AUDI);
 			electricCarRepository.save(car);
+
 		};
 	}
 }
-
