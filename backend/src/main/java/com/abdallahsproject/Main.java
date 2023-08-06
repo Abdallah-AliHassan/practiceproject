@@ -42,7 +42,6 @@ public class Main {
 
 			ElectricCar car = new ElectricCar(email, CarModel.AUDI);
 			electricCarRepository.save(car);
-
 		};
 	}
 }
