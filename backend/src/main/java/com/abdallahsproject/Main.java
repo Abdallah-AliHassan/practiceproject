@@ -8,11 +8,8 @@ import com.abdallahsproject.Customer.repositories.FactoryRepository;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 
-import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
-import javafx.concurrent.Service;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,9 +24,7 @@ public class Main {
 
 	@Bean
 	CommandLineRunner runner(CustomerRepository customerRepository,
-							 ElectricCarRepository electricCarRepository,
-							 CarSpecsRepository carSpecsRepository,
-							 FactoryRepository factoryRepository){
+							 ElectricCarRepository electricCarRepository){
 		return args -> {
 			var faker = new Faker();
 			Random random = new Random();
