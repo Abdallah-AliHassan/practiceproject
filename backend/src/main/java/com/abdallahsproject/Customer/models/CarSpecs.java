@@ -1,6 +1,8 @@
 package com.abdallahsproject.Customer.models;
 
 
+import com.abdallahsproject.exception.DuplicateResourceException;
+import com.abdallahsproject.exception.RequestValidationException;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -30,7 +32,7 @@ public class CarSpecs {
     private String name;
 
     @Column(nullable = false)
-    private String year;
+    private Integer year;
 
     @JsonBackReference
     @ManyToOne
@@ -45,7 +47,7 @@ public class CarSpecs {
         this.factory = factory;
     }
 
-    public CarSpecs(String name, String year) {
+    public CarSpecs(String name, Integer year) {
         this.name = name;
         this.year = year;
     }
@@ -66,11 +68,14 @@ public class CarSpecs {
         this.name = name;
     }
 
-    public String getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setYear(Integer year) {
+        if(year > 2000 && year < 2024) {
+            this.year = year;
+        }
+        else throw new RequestValidationException("Year is out of the supported range");
     }
 }
