@@ -1,5 +1,6 @@
 package com.abdallahsproject.Customer.controllers;
 
+import com.abdallahsproject.Customer.models.CarModel;
 import com.abdallahsproject.Customer.models.Factory;
 import com.abdallahsproject.Customer.services.FactoryService;
 import org.springframework.web.bind.annotation.*;
@@ -24,5 +25,12 @@ public class FactoryController {
     @PostMapping
     public void postFactory(@RequestBody Factory request) {
         factoryService.addFactory(request);
+    }
+
+
+    @DeleteMapping("delete/{id}")
+    public void deleteFactoryById(
+            @PathVariable("id") Long id) {
+        factoryService.deleteFactory(id);
     }
 }

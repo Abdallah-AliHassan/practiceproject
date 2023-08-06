@@ -1,6 +1,7 @@
 package com.abdallahsproject.Customer.services;
 
-import com.abdallahsproject.Customer.models.CarSpecs;
+
+import com.abdallahsproject.Customer.models.CarModel;
 import com.abdallahsproject.Customer.models.Factory;
 import com.abdallahsproject.Customer.repositories.FactoryRepository;
 import com.abdallahsproject.exception.DuplicateResourceException;
@@ -32,4 +33,5 @@ public class FactoryService {
     public void deleteFactory(Long id){
         factoryRepository.deleteById(id);
     }
+
 }
