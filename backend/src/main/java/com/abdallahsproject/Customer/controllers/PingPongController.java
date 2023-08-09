@@ -10,8 +10,8 @@ public class PingPongController {
 
     record PingPong(String res){}
 
-    @GetMapping("/ping")
+    @GetMapping("/echo")
     public PingPong getPingPong() {
-        return new PingPong("pong   " + ++COUNTER);
+        return new PingPong("Hello0o0   " + ++COUNTER);
     }
 }
