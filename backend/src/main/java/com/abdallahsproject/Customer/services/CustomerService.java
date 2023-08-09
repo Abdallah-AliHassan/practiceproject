@@ -3,6 +3,7 @@ package com.abdallahsproject.Customer.services;
 import com.abdallahsproject.Customer.models.Customer;
 import com.abdallahsproject.Customer.models.CustomerRegistrationRequest;
 import com.abdallahsproject.Customer.models.CustomerUpdateRequest;
+import com.abdallahsproject.exception.ApiRequestException;
 import com.abdallahsproject.exception.DuplicateResourceException;
 import com.abdallahsproject.exception.RequestValidationException;
 import com.abdallahsproject.exception.ResourceNotFoundException;
@@ -33,7 +34,7 @@ public class CustomerService {
 
     public void addCustomer(CustomerRegistrationRequest customerRegistrationRequest) {
         if (customerDao.existsPersonWithEmail(customerRegistrationRequest.email())) {
-            throw new DuplicateResourceException("Email already taken");
+            throw new ApiRequestException("Email already taken");
         }
 
         Customer customer = new Customer(
@@ -46,6 +47,8 @@ public class CustomerService {
     }
 
     public void deleteCustomerById(Long id) {
+        // how to return a response of error cases with different handlling.
+        //check if the request body is right, "java bean validation" --> have a look
         if (!customerDao.existsCustomerById(id)) {
             throw new ResourceNotFoundException(
                     "customer with id [%s] not found".formatted(id));
@@ -85,5 +88,4 @@ public class CustomerService {
 
         customerDao.updateCustomer(customer);
     }
-
 }

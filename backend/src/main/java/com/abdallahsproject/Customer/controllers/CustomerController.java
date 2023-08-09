@@ -4,6 +4,8 @@ import com.abdallahsproject.Customer.models.Customer;
 import com.abdallahsproject.Customer.models.CustomerRegistrationRequest;
 import com.abdallahsproject.Customer.services.CustomerService;
 import com.abdallahsproject.Customer.models.CustomerUpdateRequest;
+import jakarta.validation.Valid;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/customers")
+@Validated
 public class CustomerController {
 
     private final CustomerService customerService;
@@ -42,7 +45,7 @@ public class CustomerController {
     }
 
     @PostMapping
-    public void registerCustomer(@RequestBody CustomerRegistrationRequest request) {
+    public void registerCustomer(@RequestBody @Valid CustomerRegistrationRequest request) {
         customerService.addCustomer(request);
     }
 
