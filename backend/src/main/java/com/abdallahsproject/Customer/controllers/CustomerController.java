@@ -28,11 +28,6 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    /*
-   @RequestMapping(
-           path = "api/v1/customer",
-           method = RequestMethod.GET
-   )*/
     @GetMapping
     public List<Customer> getCustomers() {
         return customerService.getAllCustomers();
