@@ -34,7 +34,7 @@ public class CustomerService {
 
     public void addCustomer(CustomerRegistrationRequest customerRegistrationRequest) {
         if (customerDao.existsPersonWithEmail(customerRegistrationRequest.email())) {
-            throw new ApiRequestException("Email already taken");
+            throw new DuplicateResourceException("Email already taken");
         }
 
         Customer customer = new Customer(

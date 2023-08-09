@@ -17,7 +17,7 @@ import java.util.Map;
 public class ApiExceptionHandler {
 
 
-    @ExceptionHandler(value = {ApiRequestException.class})
+    @ExceptionHandler(value = {DuplicateResourceException.class})
     public ResponseEntity<Object> handleApiRequestException(ApiRequestException e){
         HttpStatus badRequest = HttpStatus.BAD_REQUEST;
         ApiException apiException = new ApiException(
