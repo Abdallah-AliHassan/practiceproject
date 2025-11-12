@@ -17,7 +17,7 @@ services:
     container_name: practice-project
     image: abdallahali22/practice-project
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres
     ports:
       - "8088:8080"
     networks:

@@ -35,7 +35,7 @@ public class CustomerIT {
 
         String name = fakerName.fullName();
         String email = fakerName.lastName() + "@exampleTestawy.com";
-        int age = random.nextInt(1, 100);
+        int age = random.nextInt(18, 100);
 
         CustomerRegistrationRequest customerRegistrationRequest = new CustomerRegistrationRequest(
                 name, email, age
@@ -94,7 +94,7 @@ public class CustomerIT {
         Name fakerName = faker.name();
 
         String name = fakerName.fullName();
-        int age = random.nextInt(1, 100);
+        int age = random.nextInt(18, 100);
         String email = fakerName.lastName() + age + "@exampleTestawy.com";
 
         CustomerRegistrationRequest customerRegistrationRequest = new CustomerRegistrationRequest(
@@ -150,7 +150,7 @@ public class CustomerIT {
 
         String name = fakerName.fullName();
         String email = fakerName.lastName() + "@exampleTestawy.com";
-        int age = random.nextInt(1, 100);
+        int age = random.nextInt(18, 100);
 
         CustomerRegistrationRequest customerRegistrationRequest = new CustomerRegistrationRequest(
                 name, email, age

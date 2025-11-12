@@ -43,7 +43,7 @@ class CustomerJPADataAccessServiceTest {
 
         sut.selectCustomerById(id);
 
-        verify(customerRepository, times(1)).findCustomersById(id);
+        verify(customerRepository, times(1)).findCustomerById(id);
     }
 
     @Test
@@ -70,7 +70,7 @@ class CustomerJPADataAccessServiceTest {
 
         sut.deleteCustomerById(id);
 
-        verify(customerRepository, times(1)).deleteCustomerById(id);
+        verify(customerRepository, times(1)).deleteById(id);
     }
 
     @Test
